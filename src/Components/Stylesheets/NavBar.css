@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap");
+
+.navBg{
+    background-color: #0D7039;
+    /* background-color: #0AAD5A; */
+    height: 80px;  
+}
+
+.textNav{
+    color: white !important;
+    font-size: 1.5rem;
+    margin-right: 5px;
+    font-family: "Poppins SemiBold";
+}
+
+.textNavLogin{
+    color: white !important;
+    font-size: 1.2rem;
+    font-family: "Poppins SemiBold";
+}

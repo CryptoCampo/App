@@ -1,0 +1,24 @@
+#bodyInverti{
+    background-size: cover;
+    background-image: url('../../Resources/img/BackImage.png');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    position:fixed;
+    width:100%;
+    height:100%;
+    margin-left: 0px;
+background-color: white;
+}
+
+.align{
+    align-items: center;
+}
+
+.txtCantNft{
+    width: 20%;
+    margin-right: 20px;
+}
+
+.btnComprar{
+    width: 70%;
+}
