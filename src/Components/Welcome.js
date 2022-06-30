@@ -17,34 +17,11 @@ function Welcome() {
     return (
 <>
         <div className='row' id='body'>
-            {/* <Back id="tsparticles"
-                params={{
-                    "particles": {
-                        "number": {
-                            "value": 50
-                        },
-                        "size": {
-                            "value": 3
-                        }
-                    },
-                    "interactivity": {
-                        "events": {
-                            "onhover": {
-                                "enable": true,
-                                "mode": "repulse"
-                            }
-                        }
-                    }
-                }} /> */}
+            
             <div className='row center mt-2'>
                 <div className='col-md-6 justify-content-center'>
-                    <div className='logo justify-content-center row'>
-                            {/* <h1 className='textA text'>Unimos las<br></br>
-                                cryptomonedas<br></br>
-                                con el campo.</h1>
-                            <p>Inverti de forma simple, segura
-                                y transparente.</p> */}
-                                <img className='logoCC' src={Logo}></img>
+                    <div className='logo justify-content-center row'>                            
+                        <img className='logoCC' src={Logo}></img>
                     </div>
                     <div className='row justify-content-center btnAlign'>
                         <div className='justify-content-center'>
@@ -53,20 +30,20 @@ function Welcome() {
                         </div>
                     </div>
                 </div>
+<<<<<<< Updated upstream
                 <div className='col-md-6'>
                     {/*<div className='row justify-content-center p-5 mt-2' id='video'>
                         <video src={videoWelcome} loop='true' width="800" height="600" controls="" autoplay="true" className='media-video' muted='true' />
+<<<<<<< Updated upstream
                             </div>*/}
+=======
+                    </div>
+=======
+                <div className='col-md-6'>                    
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
                 </div>
-            </div>
-            {/* <div className='col-md-6'> */}
-            {/* <Card className='center card'>
-                    <Card.Img variant="top" src={campoImg} width='600px' height='800rem' />
-                    <Card.Body>
-                        <Card.Title className='cardTitle'>CryptoCampo</Card.Title>
-                    </Card.Body>
-                </Card> */}
-            {/* </div> */}
+            </div>          
             
         </div>
         <div>
