@@ -1,6 +1,5 @@
 
-import React, {Component, useState} from 'react';
-import { UserOutlined } from '@ant-design/icons';
+import React, {useState} from 'react';
 import { Modal, Button } from 'antd';
 
 function ProfilePicChanger()
@@ -19,9 +18,7 @@ function ProfilePicChanger()
     const handleCancel = () => {
       setIsModalVisible(false);
     };
-
-
-    // render(){
+    
         return (
             <>
             <div className="ProfilePicChanger">
@@ -39,7 +36,7 @@ function ProfilePicChanger()
             </div>
           </>
         )
-    // }
+    
 }
 
 export default ProfilePicChanger;
