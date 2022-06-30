@@ -30,20 +30,11 @@ function Welcome() {
                         </div>
                     </div>
                 </div>
-<<<<<<< Updated upstream
                 <div className='col-md-6'>
-                    {/*<div className='row justify-content-center p-5 mt-2' id='video'>
-                        <video src={videoWelcome} loop='true' width="800" height="600" controls="" autoplay="true" className='media-video' muted='true' />
-<<<<<<< Updated upstream
-                            </div>*/}
-=======
-                    </div>
-=======
-                <div className='col-md-6'>                    
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+                    
                 </div>
-            </div>          
+            </div>
+            
             
         </div>
         <div>
