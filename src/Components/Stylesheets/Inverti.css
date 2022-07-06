@@ -1,4 +1,4 @@
-#bodyInverti{
+.bodyInverti{
     background-size: cover;
     background-image: url('../../Resources/img/BackImage.png');
     background-repeat: no-repeat;
@@ -7,7 +7,7 @@
     width:100%;
     height:100%;
     margin-left: 0px;
-background-color: white;
+    background-color: white;
 }
 
 .align{

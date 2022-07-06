@@ -1,15 +1,16 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './Stylesheets/Inverti.css';
-import { Button, Card } from 'react-bootstrap';
+//import { Card } from 'react-bootstrap';
+import { Button } from 'antd';
 import CampoNFT from '../Resources/img/CampoNftCC.jpg';
 
-
+const {  Card  } = antd;
 
 
 function Inverti() {
     return (
         <>
-        <div id='bodyInverti' className='d-flex justify-content-center'>
+        <div className='d-flex justify-content-center bodyInverti'>
             <div className='row align'>
                 <div className='col-md-4 p-5'>
                     <Card style={{ width: '18rem' }}>
