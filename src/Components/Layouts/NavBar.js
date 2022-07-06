@@ -2,23 +2,51 @@ import '../Stylesheets/NavBar.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav, Container, NavDropdown, Form, Button, Offcanvas, ListGroup, Card } from 'react-bootstrap';
 import { Outlet, Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import IconMeta from './img/metamask.ico';
-import IconCoin from './img/coinbase.svg';
-import IconTrust from './img/trust.png';
+// import IconCoin from './img/coinbase.svg';
+// import IconTrust from './img/trust.png';
 import IconProfile from './img/iconProfile.png';
 import logoHome from './img/logoHome.png'
+import useTruncatedAddress from '../../hooks/useTruncatedAddress';
 
 function NavBarCC() {
   const [show, setShow] = useState(false);
   const closeSidebar = () => setShow(false);
-  const showSidebar = () => setShow(true);
+  // const showSidebar = () => setShow(true);
+  const [account, setAccount] = useState('');
+  const truncatedAddress = useTruncatedAddress(account);
+
+  async function requestAccount() {
+    if(window.ethereum) {
+      try {
+        const accounts = await window.ethereum.request({
+          method: "eth_requestAccounts"
+        })
+        setAccount(accounts[0])
+        localStorage.setItem('PreviouslyConnected', 'true');
+      } catch(error) {
+        console.log('Err to connecting... ', error)
+      }
+    } else {
+      console.log('Wallet desconectado')
+    }
+  }
+
+  async function walletDisconnect() {
+    setAccount('')
+    localStorage.removeItem('PreviouslyConnected');
+  }
+
+  useEffect(() => {
+    if(localStorage.getItem('PreviouslyConnected') === 'true') requestAccount();
+  }, [account]);
 
   return (
     <>
       <Navbar className='navBg' variant='dark' expand="lg">
         <Container fluid>
-          <Navbar.Brand className='textNav' as={Link} to='/'><img src={logoHome} width='320px' height='70px'></img></Navbar.Brand>
+          <Navbar.Brand className='textNav' as={Link} to='/'><img src={logoHome} width='320px' height='70px' alt='img'></img></Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -32,7 +60,7 @@ function NavBarCC() {
               <Nav.Link as={Link} to='/MarketPlace' className='textNav'>Marketplace</Nav.Link>
               <Nav.Link as={Link} to='/DashBoard' className='textNav'>Mis Inversiones</Nav.Link>
               <Nav.Link as={Link} to='/Ayuda' className='textNav'>Ayuda</Nav.Link>
-              <img src={IconProfile} width='50px' height='50px'></img>
+              <img src={IconProfile} width='50px' height='50px' alt='img'></img>
               <NavDropdown className='textNav' id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Mi Perfil</NavDropdown.Item>
                 <NavDropdown.Divider />
@@ -42,7 +70,11 @@ function NavBarCC() {
               </NavDropdown>
             </Nav>
             <Form className="d-flex">
-              <Button variant="outline-success" onClick={showSidebar} className='textNavLogin rounded-pill border-3'>Ingresar</Button>
+              {account ?
+                <Button variant="outline-success" onClick={walletDisconnect} className='textNavLogin rounded-pill border-3'>{truncatedAddress}</Button>
+                : <Button variant="outline-success" onClick={requestAccount} className='textNavLogin rounded-pill border-3'>Ingresar</Button>
+              }
+              
               <Container className='p-4'>
                 <Offcanvas show={show} onHide={closeSidebar} placement='end'>
                   <Offcanvas.Header closeButton>
@@ -54,9 +86,9 @@ function NavBarCC() {
 
                       <Card style={{ width: '18rem' }}>
                         <ListGroup variant="flush">
-                          <ListGroup.Item as={Link} to='/' className='fs-4'><img src={IconMeta} width='35px' height='35px' className='me-2'></img>Metamask</ListGroup.Item>
-                          <ListGroup.Item as={Link} to='/' className='fs-4'><img src={IconTrust} width='35px' height='35px' className='me-2'></img>Trust</ListGroup.Item>
-                          <ListGroup.Item as={Link} to='/' className='fs-4'><img src={IconCoin} width='35px' height='35px' className='me-2'></img>Coinbase</ListGroup.Item>
+                          <ListGroup.Item as={Link} to='/' className='fs-4'><img src={IconMeta} width='35px' height='35px' className='me-2' alt='img'></img>Metamask</ListGroup.Item>
+                          {/* <ListGroup.Item as={Link} to='/' className='fs-4'><img src={IconTrust} width='35px' height='35px' className='me-2'></img>Trust</ListGroup.Item>
+                          <ListGroup.Item as={Link} to='/' className='fs-4'><img src={IconCoin} width='35px' height='35px' className='me-2'></img>Coinbase</ListGroup.Item> */}
                         </ListGroup>
                       </Card>
                     </div>
