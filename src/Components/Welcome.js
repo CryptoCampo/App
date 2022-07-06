@@ -1,7 +1,7 @@
 import './Stylesheets/Welcome.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Back from './ParticleBackground';
-import videoWelcome from '../Resources/videos/VideoWelcome.mp4'
+// import videoWelcome from '../Resources/videos/VideoWelcome.mp4'
 import { Navbar, Nav, Container, NavDropdown, Form, Button, Offcanvas, ListGroup, Card } from 'react-bootstrap';
 import { Outlet, Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -53,11 +53,11 @@ function Welcome() {
                         </div>
                     </div>
                 </div>
-                <div className='col-md-6'>
+                {/* <div className='col-md-6'>
                     <div className='row justify-content-center p-5 mt-2' id='video'>
                         <video src={videoWelcome} loop='true' width="800" height="600" controls="" autoplay="true" className='media-video' muted='true' />
                     </div>
-                </div>
+                </div> */}
             </div>
             {/* <div className='col-md-6'> */}
             {/* <Card className='center card'>
