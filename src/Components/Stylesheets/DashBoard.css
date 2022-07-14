@@ -9,18 +9,16 @@
     height:100%;
     margin-left: 0px;
     background: -webkit-linear-gradient(top, white, 'background-image:' url("../../Resources/img/BackImage.png"));   
-
 }
 
 .perfil{
     width:100%;
     margin-left: 0px;
-background-color: rgb(10, 190, 79);
+    background-color: rgb(10, 190, 79);
 }
 
 .Title{
-margin-top: 5%;
-
+    margin-top: 5%;
     font-size: 5rem;
     font-family: "Poppins SemiBold" !important;
     color: green;
@@ -28,5 +26,4 @@ margin-top: 5%;
 
 .rowHr{
     height: 80%;
-
 }
