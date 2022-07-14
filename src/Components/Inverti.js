@@ -1,11 +1,9 @@
 
 import './Stylesheets/Inverti.css';
-//import { Card } from 'react-bootstrap';
-import { Button } from 'antd';
+import { Button, Card, InputNumber } from 'antd';
 import CampoNFT from '../Resources/img/CampoNftCC.jpg';
 
-const {  Card  } = antd;
-
+const { Meta } = Card;
 
 function Inverti() {
     return (
@@ -13,44 +11,23 @@ function Inverti() {
         <div className='d-flex justify-content-center bodyInverti'>
             <div className='row align'>
                 <div className='col-md-4 p-5'>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={CampoNFT} />
-                        <Card.Body>
-                            <Card.Title>Small</Card.Title>
-                            <Card.Text>
-                                Some quick example text.
-                            </Card.Text>
-                            <input type="number" defaultValue={10} id='numSmall' className='txtCantNft'></input>
-                            <Button variant="success" className='btnComprar'>Comprar</Button>
-                        </Card.Body>
+                    <Card  bordered={true} hoverable style={{ width: '17rem' }}
+                          cover={<img alt="cryptocampo" src={CampoNFT}/>}>
+                          <InputNumber  defaultValue={10} autoFocus size="medium" min={0} 
+                            formatter={(value) => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                            parser={(value) => value.replace(/\$\s?|(,*)/g, '')} 
+                            />
+                          <Button variant="success" >Comprar</Button>
+
                     </Card>
                 </div>
-                <div className='col-md-4 p-5'>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={CampoNFT} />
-                        <Card.Body>
-                            <Card.Title>Medium</Card.Title>
-                            <Card.Text>
-                                Some quick example text.
-                            </Card.Text>
-                            <input type="number" defaultValue={10} id='numMedium' className='txtCantNft'></input>
-                            <Button variant="success" className='btnComprar'>Comprar</Button>
-                        </Card.Body>
-                    </Card>
-                </div>
-                <div className='col-md-4 p-5'>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={CampoNFT} />
-                        <Card.Body>
-                            <Card.Title>Large</Card.Title>
-                            <Card.Text>
-                                Some quick example text.
-                            </Card.Text>
-                            <input type="number" defaultValue={10} id='numLarge' className='txtCantNft'></input>
-                            <Button variant="success" className='btnComprar'>Comprar</Button>
-                        </Card.Body>
-                    </Card>
-                </div>
+
+           
+
+           
+                
+                          
+
             </div>
         </div>
         </>

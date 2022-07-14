@@ -10,12 +10,6 @@ import MarketPlace from './Components/MarketPlace';
 import Ayuda from './Components/Ayuda';
 
 
-
-
-
-
-
-
 function App() {
   return (
 <div className='App'>
